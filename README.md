@@ -1,4 +1,4 @@
-# music-recommendation-games-site
+# music-recommendation-games-site (THE WEBSITE IS NOT FINISHED YET!)
 
 This site has a main page, which aims at presenting general aspects of the singer Lana del Rey and how it made an impact for me. 
 
