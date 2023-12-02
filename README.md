@@ -27,7 +27,7 @@ The second section provides us more description and personal insight regarding t
 #LUST FOR LIFE
 This page has only one section, which is interactive. At first, the menu is not diplayed on the page, because we are provided with a square game which covers the entire screen. 
 The game provides an input for the default number of squares and an animation moves the squares to the bottom of the container and then brings them back. When an animation is completed, a square is added and it begins again, and so on, until we click the stop button.
-When we do this, the whole section is blured a
+When we do this, the whole section is blured an another container is displayed over, which has different images and text presenting the album. In this container, the user is able to open the menu and either restart the animation with the same number or input squares, ore move on to the next page or go back to the main page. The animation also deliveres a warning if we input a string or a number of squares which is too big to handle and we have to restart the whole animation.
 
 
 https://github.com/DragosTrandafir/music-recommendation-games-site/assets/62999548/03474b60-f416-4a44-9a8b-762b7b203112
@@ -39,11 +39,11 @@ https://github.com/DragosTrandafir/music-recommendation-games-site/assets/629995
 
 https://github.com/DragosTrandafir/music-recommendation-games-site/assets/62999548/da03b886-0f56-4951-a6ea-16633cfcee7c
 
-n another containe
+
 
 https://github.com/DragosTrandafir/music-recommendation-games-site/assets/62999548/d2ce52d0-4090-4df3-abad-1f52e6ac67f2
 
-r is displayed over, which has different images and text presenting the album. In this container, the user is able to open the menu and either restart the animation with the same number or input squares, ore move on to the next page or go back to the main page. The animation also deliveres a warning if we input a string or a number of squares which is too big to handle and we have to restart the whole animation.
+
 
 
 
