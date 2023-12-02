@@ -1,6 +1,24 @@
 # music-recommendation-games-site (still in developing process)
 
-This site has a main page, which aims at presenting general aspects of the singer Lana del Rey and how it made an impact for me. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+This site has a main page, which aims at presenting general aspects of the singer Lana del Rey and how it made an impact for me. (it is called "pagina principala.html" and IT SHOULD BE ACCESSED FIRST)
 
 The secondary pages are accessible either from this mainpage, or one from the other, which is displayed before it in the mainpage.
 
@@ -24,7 +42,24 @@ The second section provides us more description and personal insight regarding t
 #LUST FOR LIFE
 This page has only one section, which is interactive. At first, the menu is not diplayed on the page, because we are provided with a square game which covers the entire screen. 
 The game provides an input for the default number of squares and an animation moves the squares to the bottom of the container and then brings them back. When an animation is completed, a square is added and it begins again, and so on, until we click the stop button.
-When we do this, the whole section is blured an another container is displayed over, which has different images and text presenting the album. In this container, the user is able to open the menu and either restart the animation with the same number or input squares, ore move on to the next page or go back to the main page. The animation also deliveres a warning if we input a string or a number of squares which is too big to handle.
+When we do this, the whole section is blured an another container is displayed over, which has different images and text presenting the album. In this container, the user is able to open the menu and either restart the animation with the same number or input squares, ore move on to the next page or go back to the main page. The animation also deliveres a warning if we input a string or a number of squares which is too big to handle and we have to restart the whole animation.
 
 
+
+
+
+
+https://github.com/DragosTrandafir/music-recommendation-games-site/assets/62999548/eeaca09d-cd83-49fb-8dff-c1747f7cc290
+
+
+
+https://github.com/DragosTrandafir/music-recommendation-games-site/assets/62999548/9f64b540-2c82-4a77-9dce-30b209b9f53e
+
+
+
+https://github.com/DragosTrandafir/music-recommendation-games-site/assets/62999548/a03af41a-d4b3-4aef-a233-15b52d6bb3c4
+
+
+
+https://github.com/DragosTrandafir/music-recommendation-games-site/assets/62999548/baa53b71-5af8-4bb7-a922-37617d8fd835
 
