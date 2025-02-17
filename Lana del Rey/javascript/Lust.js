@@ -1,86 +1,70 @@
-const colors=['red','blue','yellow','orange','purple','pink','brown','green'];
+const colors = ['red', 'blue', 'yellow', 'orange', 'purple', 'pink', 'brown', 'green']; //colors for the squares array
 
 let interv;
 
-function randomiseColor(colors){
-  let color = Math.random();
-  color = Math.floor(Math.random()*8);
+function randomiseColor(colors) {
+  let color = Math.floor(Math.random() * 8); //pick one of the 8 colors randomly
   return colors[color];
 }
 
 
 
-function randomiseStartPosition(n){
-   //we randomise 1 out of 89 positions for a square
-  
-  /*const element = document.querySelector('.square-container'); //3 steps for accessing a property value in css
-  const computedStyle = window.getComputedStyle(element);
-  const widthValue = computedStyle.getPropertyValue('width');*/
-  
-  
- /* let elem1= parseFloat(widthValue);
-  elem1=(2/3)*elem1;
-  let elem2=parseInt(elem1);
-  console.log(elem2)*/
+function randomiseStartPosition(n) {
+  //we randomise 1 out of 89 positions for a square and call the randomiseColor from before
 
- 
-  let startPosition = Math.random();  
-  startPosition = Math.floor(Math.random()*88);
-  
+  let startPosition = Math.floor(Math.random() * 88);
 
   let squareRandom = document.querySelector(`.square${n}`);
-  console.log(squareRandom);
-  squareRandom.style.left=`${startPosition}vw`;
-  squareRandom.style.backgroundColor=`${randomiseColor(colors)}`;
+  squareRandom.style.left = `${startPosition}vw`;
+  squareRandom.style.backgroundColor = `${randomiseColor(colors)}`;
 };
 
 let innerContainer = document.querySelector('.square-container');//we must create this element before the delay
 
-function actionAnimation(){
-
+function actionAnimation() {
   document.querySelector(".js-add")
-  .addEventListener('click',()=>{
-        
-       
-    
-        stopAfter10Sec();
-        
+    .addEventListener('click', () => {
 
-        if((document.querySelector(".input-value").value == parseInt(document.querySelector(".input-value").value)) 
-        && parseInt(document.querySelector(".input-value").value) < 100){
-
-          let n = parseInt(document.querySelector(".input-value").value);
-
-          for(let i=1;i<=n;i++){
-            innerContainer.innerHTML+=`<div class="square square${i}"></div>`;
-            randomiseStartPosition(i);
-          }
-          n++;
-
-          interv = setInterval(()=>{
-              innerContainer.innerHTML+=`<div class="square square${n}"></div>`;
-              randomiseStartPosition(n);
-              n++;
-            },5000);
+      stopAfter1Sec();
 
 
-          } else if (document.querySelector(".input-value").value != parseInt(document.querySelector(".input-value").value)){
-              alert("Choose a number!");
-          } else if(parseInt(document.querySelector(".input-value").value) >= 100){
-            alert("The number chosen is to big! Choose a value < 100.");
-          } else alert("Error");
-        },{once:true});
+      if ((document.querySelector(".input-value").value == parseInt(document.querySelector(".input-value").value))
+        && parseInt(document.querySelector(".input-value").value) < 100) { // if we have an integer < 100 as input
 
-      
-    }
-  
+        let nrSquares = parseInt(document.querySelector(".input-value").value);
 
-actionAnimation();
+        for (let squareIndex = 1; squareIndex <= nrSquares; squareIndex++) {
+          innerContainer.innerHTML += `<div class="square square${squareIndex}"></div>`; //html part
+          randomiseStartPosition(squareIndex); //js part -> every square should have a random position
+        }
+        nrSquares++;
 
-function addAlbumLayer(){
+        interv = setInterval(() => {
+          innerContainer.innerHTML += `<div class="square square${nrSquares}"></div>`;
+          randomiseStartPosition(nrSquares);  // one at every 5 seconds, a new square will be added
+          nrSquares++;
+        }, 5000);
 
-    document.getElementById("watch-section").
-    innerHTML=`
+
+      } else if (document.querySelector(".input-value").value != parseInt(document.querySelector(".input-value").value)) {
+        alert("Choose a number!");
+      } else if (parseInt(document.querySelector(".input-value").value) >= 100) {    //exceptions in case input is wrong
+        alert("The number chosen is to big! Choose a value < 100.");
+      } else alert("Error");
+    }, { once: true });
+
+
+}
+
+
+actionAnimation(); //this should be started right when we load the page -> called globally
+
+function addAlbumLayer() {
+
+  //this layer will be above our animation
+
+  document.getElementById("watch-section").
+    innerHTML = `
     <div class="input">
       Set number of input squares:
       <input type="text" class="input-value" placeholder="5...">
@@ -101,30 +85,29 @@ function addAlbumLayer(){
      <button class="open-menu">Open menu</button>
      </div>
     `;
-    document.querySelector(".watch-section > *").style.filter="blur(10px)";
-    document.querySelector(".open-menu").addEventListener('mouseenter',()=>{
-      let headerElement = document.querySelector(".header");
-      headerElement.style.zIndex="21";
-      document.querySelector(".js-refresh").addEventListener('click', ()=>{
-        console.log("caca")
-        window.location.reload();
-      });
+  document.querySelector(".watch-section > *").style.filter = "blur(10px)"; //blur the background
+  document.querySelector(".open-menu").addEventListener('mouseenter', () => { //when we hover over the open-menu button, we will be able to restart the animation with a refresh button
+    let headerElement = document.querySelector(".header");
+    headerElement.style.zIndex = "21";
+    document.querySelector(".js-refresh").addEventListener('click', () => {
+      window.location.reload();
     });
+  });
 }
 
 
-function stopAfter10Sec(){
-  setTimeout(()=>{
-     document.querySelector(".input")
-     .innerHTML+=`<button class="stop js-stop">Stop</button>`;
-     document.querySelector(".js-stop").addEventListener('click',()=>{
-      innerContainer.innerHTML=``;
+function stopAfter1Sec() {
+  // after 1 second, we add a new button with the ability of being clicked and adding the layer containing information about the album
+  setTimeout(() => {
+    document.querySelector(".input")
+      .innerHTML += `<button class="stop js-stop">Stop</button>`;
+    document.querySelector(".js-stop").addEventListener('click', () => {
+      innerContainer.innerHTML = ``;
       clearInterval(interv);
       addAlbumLayer();
-     })
-  },1000);
+    })
+  }, 1000);
 };
 
-  
 
-  
+
